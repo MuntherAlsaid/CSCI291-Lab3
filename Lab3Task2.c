@@ -2,7 +2,6 @@
 
 #define SIZE 7 
 
-// Function prototypes
 void Transactions(int transactions[], int size, int initialBalance);
 void printArray(int array[], int size);
 
@@ -15,10 +14,9 @@ int main() {
     return 0;
 }
 
-// Function to process the transactions
 void Transactions(int transactions[], int size, int initialBalance) {
     int balance = initialBalance;
-    int unproccesed[SIZE]; // Array to store unprocessed transactions
+    int unproccesed[SIZE]; 
     int unproccesedCount = 0;
 
     for (int i = 0; i < size; i++) {
@@ -32,7 +30,7 @@ void Transactions(int transactions[], int size, int initialBalance) {
 
         if (balance < 0) {
             printf("Invalid transaction: %d leads to negative balance. Transaction skipped.\n", transactions[i]);
-            balance -= transactions[i]; // Undo the transaction
+            balance -= transactions[i];
             unproccesed[unproccesedCount++] = transactions[i];
             continue;
         }
@@ -53,7 +51,6 @@ void Transactions(int transactions[], int size, int initialBalance) {
     printArray(unproccesed, unproccesedCount);
 }
 
-// Function to print an array
 void printArray(int array[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d, ", array[i]);
